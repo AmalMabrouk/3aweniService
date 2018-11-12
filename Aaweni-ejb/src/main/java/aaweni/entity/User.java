@@ -41,7 +41,7 @@ public class User  implements Serializable  {
 	@Column(name = "User_password")
 	String password;
 	@Column(name = "User_specialite")
-	String specialité;
+	String specialite;
 	@Column(name = "User_role")
 	String role;
 	
@@ -55,7 +55,7 @@ public class User  implements Serializable  {
 		this.adresseMail = adresseMail;
 		this.cin = cin;
 		this.password = password;
-		this.specialité = specialité;
+		this.specialite = specialité;
 		this.role = role;
 	}
 	
@@ -70,7 +70,7 @@ public class User  implements Serializable  {
 		this.adresseMail = adresseMail;
 		this.cin = cin;
 		this.password = password;
-		this.specialité = specialité;
+		this.specialite = specialité;
 		this.role = role;
 		ListeAvisAgent = listeAvisAgent;
 		ListeAvisClient = listeAvisClient;
@@ -145,13 +145,13 @@ public class User  implements Serializable  {
 	}
 
 
-	public String getSpecialité() {
-		return specialité;
+	public String getSpecialite() {
+		return specialite;
 	}
 
 
 	public void setSpecialité(String specialité) {
-		this.specialité = specialité;
+		this.specialite = specialite;
 	}
 
 
@@ -226,7 +226,7 @@ public Set<Demande> getListeDemande() {
 @Override
 	public String toString() {
 		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", adresseMail=" + adresseMail + ", cin="
-				+ cin + ", password=" + password + ", specialité=" + specialité + ", role=" + role + ", ListeAvisAgent="
+				+ cin + ", password=" + password + ", specialité=" + specialite	 + ", role=" + role + ", ListeAvisAgent="
 				+ ListeAvisAgent + ", ListeAvisClient=" + ListeAvisClient + ", ListeDemande=" + ListeDemande
 				+ ", cordgeouser=" + cordgeouser + ", OffreAgent=" + OffreAgent + "]";
 	}
