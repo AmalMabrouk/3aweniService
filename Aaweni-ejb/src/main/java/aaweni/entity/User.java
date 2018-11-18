@@ -55,6 +55,7 @@ public class User implements Serializable {
 		this.adresseMail = adresseMail;
 		this.cin = cin;
 		this.password = password;
+
 		this.specialite = specialite;
 		this.role = role;
 	}
@@ -69,6 +70,7 @@ public class User implements Serializable {
 		this.adresseMail = adresseMail;
 		this.cin = cin;
 		this.password = password;
+
 		this.specialite = specialite;
 		this.role = role;
 		ListeAvisAgent = listeAvisAgent;
@@ -130,11 +132,11 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getSpecialité() {
+	public String getSpecialite() {
 		return specialite;
 	}
 
-	public void setSpecialité(String specialite) {
+
 		this.specialite = specialite;
 	}
 
@@ -193,8 +195,8 @@ public class User implements Serializable {
 	public void setOffreAgent(Set<Offre_Agent> offreAgent) {
 		OffreAgent = offreAgent;
 	}
-
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "agent")
+
 	private Set<Avis> ListeAvisAgent;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "client")
 	private Set<Avis> ListeAvisClient;
