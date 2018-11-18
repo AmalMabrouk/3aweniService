@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@XmlRootElement
+
 @Entity
 @JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class,

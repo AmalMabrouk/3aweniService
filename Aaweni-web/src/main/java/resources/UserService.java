@@ -21,13 +21,14 @@ import com.sun.mail.iap.Response;
 
 import aaweni.entity.User;
 import aaweni.service.impl.UserServiceImpl;
-import aaweni.service.interf.IUserServiceLocal;
+
+import aaweni.service.interf.IUserServiceRemote;
 
 @Path("users")
 public class UserService {
 
 	@EJB
-	IUserServiceLocal us;
+	IUserServiceRemote us;
 	static List<User> Userlist;
 
 	@GET
@@ -43,7 +44,6 @@ public class UserService {
 
 	@POST
 	@Path("ajouterUser")
-	@PermitAll
 	@Consumes("application/json")
 	public String register(User u) {
 
@@ -63,7 +63,7 @@ public class UserService {
 		return null;
 	}
 
-	@DELETE
+	@POST
 	@Path("SuppUser/{id}")
 	public String deleteemp(@PathParam(value = "id") int id)
 
@@ -72,7 +72,7 @@ public class UserService {
 		return "supp";
 	}
 
-	@PUT
+	@POST
 	@Consumes("application/json")
 	@Path("UpdateUser")
 	public String updateEmployee(User u) {

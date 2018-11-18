@@ -13,13 +13,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import aaweni.entity.User;
-import aaweni.service.interf.IUserServiceLocal;
+
 import aaweni.service.interf.IUserServiceRemote;
 
 @Stateless
-public class UserServiceImpl implements IUserServiceLocal, IUserServiceRemote {
-
-	// imputation-ejb in persistence.xml
+public class UserServiceImpl implements IUserServiceRemote {
 
 	@PersistenceContext(unitName = "aaweni-ejb")
 	EntityManager em;
@@ -27,7 +25,6 @@ public class UserServiceImpl implements IUserServiceLocal, IUserServiceRemote {
 	@Override
 	public int addUser(User user) {
 		System.out.println("In addUser : ");
-		em.persist(user.getCordgeouser());
 		em.persist(user);
 		System.out.println("Out of addUser" + user.getId());
 		return user.getId();
@@ -50,6 +47,8 @@ public class UserServiceImpl implements IUserServiceLocal, IUserServiceRemote {
 		user.setNom(userNewValues.getNom());
 		user.setPrenom(userNewValues.getPrenom());
 		user.setPassword(userNewValues.getPassword());
+		user.setCordgeouser(userNewValues.getCordgeouser());
+		user.setPicture(userNewValues.getPicture());
 
 		em.merge(user);
 
@@ -58,10 +57,16 @@ public class UserServiceImpl implements IUserServiceLocal, IUserServiceRemote {
 
 	@Override
 	public User findUserById(int id) {
-		System.out.println("In findUserById : ");
-		User user = em.find(User.class, id);
-		System.out.println("Out of findUserById : ");
-		System.out.println(user);
+
+		User user = new User();
+		try {
+			System.out.println("In findUserById : ");
+			user = em.find(User.class, id);
+			System.out.println("Out of findUserById : ");
+			System.out.println(user);
+		} catch (Exception e) {
+			System.out.println("no data found");
+		}
 		return user;
 	}
 
@@ -89,16 +94,20 @@ public class UserServiceImpl implements IUserServiceLocal, IUserServiceRemote {
 
 	@Override
 	public User findUserByMail(String mail) {
-		Query query  = em.createQuery("select e from User e where e.adresseMail=:mail");
-		query.setParameter("mail", mail); 
-		User user = null;
-		user=(User) query.getSingleResult();
-		if(user!=null)
-		{
-		System.out.println(user.toString());
-		return user;
+		User user = new User();
+		try {
+			Query query = em.createQuery("select e from User e where e.adresseMail=:mail");
+			query.setParameter("mail", mail);
+
+			user = (User) query.getSingleResult();
+		} catch (Exception e) {
+			System.out.println("no data found");
 		}
-		return null ;
+		if (user != null) {
+			System.out.println(user.toString());
+			return user;
+		}
+		return null;
 
 	}
 

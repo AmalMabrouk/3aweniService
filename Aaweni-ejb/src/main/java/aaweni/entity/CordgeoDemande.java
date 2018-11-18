@@ -9,7 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
+@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class,
+		property = "id")
 @Table(name = "CordgeoDemande")
 public class CordgeoDemande implements Serializable{
 	
@@ -22,6 +28,8 @@ public class CordgeoDemande implements Serializable{
 	double latitude;
 	@Column(name = "Cord_Longitude")
 	double longitude;
+	
+	
 	public CordgeoDemande(int id, double latitude, double longitude) {
 		super();
 		this.id = id;
@@ -48,6 +56,10 @@ public class CordgeoDemande implements Serializable{
 	}
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
+	}
+	@Override
+	public String toString() {
+		return "CordgeoDemande [id=" + id + ", latitude=" + latitude + ", longitude=" + longitude + "]";
 	}
 	
 	

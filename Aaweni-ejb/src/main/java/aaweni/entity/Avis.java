@@ -2,6 +2,7 @@ package aaweni.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -82,10 +83,20 @@ public class Avis implements Serializable{
 
 
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	User agent; 
-	@ManyToOne(fetch = FetchType.LAZY)
-	User client; 
+	@ManyToOne(fetch = FetchType.EAGER)
+	User client;
+
+
+
+	@Override
+	public String toString() {
+		return "Avis [id=" + id + ", avis_details=" + avis_details + ", noterating=" + noterating + ", agent=" + agent.id
+				+ ", client=" + client.id + "]";
+	} 
+	
+	
 	
 
 }
