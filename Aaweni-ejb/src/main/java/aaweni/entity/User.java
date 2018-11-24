@@ -132,13 +132,6 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getSpecialite() {
-		return specialite;
-	}
-
-
-		this.specialite = specialite;
-	}
 
 	public String getRole() {
 		return role;
@@ -154,6 +147,14 @@ public class User implements Serializable {
 
 	public void setPicture(String picture) {
 		this.picture = picture;
+	}
+	
+	public String getSpecialite() {
+		return specialite;
+	}
+
+	public void setSpecialite(String specialite) {
+		this.specialite = specialite;
 	}
 
 	public Set<Avis> getListeAvisAgent() {
@@ -216,12 +217,6 @@ public class User implements Serializable {
 				+ ListeDemande + ", cordgeouser=" + cordgeouser + ", OffreAgent=" + OffreAgent + "]";
 	}
 
-	public String getSpecialite() {
-		return specialite;
-	}
-
-	public void setSpecialite(String specialite) {
-		this.specialite = specialite;
-	}
+	
 
 }

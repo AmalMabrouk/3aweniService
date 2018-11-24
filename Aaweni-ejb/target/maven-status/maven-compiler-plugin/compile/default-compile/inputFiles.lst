@@ -1,9 +1,14 @@
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\entity\CordgeoDemande.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\service\impl\UserServiceImpl.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\entity\Avis.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\entity\Demande.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\service\interf\IUserServiceLocal.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\entity\User.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\entity\CordgeoUser.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\entity\Offre_Agent.java
-C:\Users\Amal Mabrouk\workspace\Aaweni\Aaweni-ejb\src\main\java\aaweni\service\interf\IUserServiceRemote.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/impl/UserServiceImpl.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/interf/IDemandeServiceRemote.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/entity/CordgeoDemande.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/interf/IOffreAgentServiceRemote.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/impl/DemandeServiceImpl.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/interf/IAvisServiceRemote.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/interf/IUserServiceRemote.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/entity/User.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/entity/Offre_Agent.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/entity/CordgeoUser.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/impl/AvisServiceImpl.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/service/impl/Offre_AgentServiceImpl.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/entity/Demande.java
+/Users/yassine/Desktop/4eme/Mini projet android/WebService/3aweniService/Aaweni-ejb/src/main/java/aaweni/entity/Avis.java
