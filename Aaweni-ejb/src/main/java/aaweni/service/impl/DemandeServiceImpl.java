@@ -34,8 +34,7 @@ public class DemandeServiceImpl implements IDemandeServiceRemote {
 	public void removeDemande(int id) {
 		System.out.println("In removeUser : ");
 		System.out.println(em.find(Demande.class, id));
-		em.remove(em.find(CordgeoDemande.class, (em.find(Demande.class, id).getCordgeoudemande().getId())));
-
+		//em.remove(em.find(CordgeoDemande.class, (em.find(Demande.class, id).getCordgeoudemande().getId())));
 		em.remove(em.find(Demande.class, id));
 		System.out.println("Out of removeUser : ");
 
@@ -53,6 +52,8 @@ public class DemandeServiceImpl implements IDemandeServiceRemote {
 		d1.setPanne(demande.getPanne());
 		d1.setType(demande.getType());
 		d1.setEtat(demande.getEtat());
+		d1.setPicture(demande.getPicture());
+		d1.setTitre(demande.getTitre());
 		d1.setDatedemande(demande.getDatedemande());
 		// em.merge(demande.getCordgeoudemande());
 
@@ -93,6 +94,25 @@ public class DemandeServiceImpl implements IDemandeServiceRemote {
 			System.out.println("no data found");
 		}
 		return demande;
+	}
+
+	@Override
+	public List<Demande> findDemandeBySpecialite(String specialite) {
+
+		List<Demande> listedemande = null;
+		try {
+			Query query = em.createQuery("select e from Demande e where e.type=:specialite");
+			query.setParameter("specialite", specialite);
+
+			listedemande = query.getResultList();
+		} catch (Exception e) {
+			System.out.println("no data found");
+		}
+		if (listedemande != null) {
+			System.out.println(listedemande.toString());
+			return listedemande;
+		}
+		return null;
 	}
 
 }
