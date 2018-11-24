@@ -1,0 +1,5 @@
+
+*.properties
+*.properties
+Aaweni-ejb/target/maven-archiver/pom.properties
+Aaweni-ejb/src/main/java/aaweni/service/interf/IDemandeServiceRemote.java
