@@ -23,11 +23,24 @@ public class DemandeService {
 	static List<Demande> Demandelist;
 	
 	@GET
-	@Path("/{id}")
+	@Path("demandeParIdClient/{id}")
 	@Produces("application/json")
 	public List<Demande> ListeDemandeParClient(@PathParam(value="id") int id) {
 		System.out.println("here");
 		Demandelist = ds.findDemandeByIdClient(id);
+		if (Demandelist != null) {
+			return Demandelist;
+		}
+		
+		return null;
+	}
+	
+	@GET
+	@Path("demandeParSpecialite/{specialite}")
+	@Produces("application/json")
+	public List<Demande> ListeDemandeParSpecialite(@PathParam(value="specialite") String specialite) {
+		System.out.println("here");
+		Demandelist = ds.findDemandeBySpecialite(specialite);
 		if (Demandelist != null) {
 			return Demandelist;
 		}

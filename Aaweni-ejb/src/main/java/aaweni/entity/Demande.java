@@ -32,10 +32,14 @@ public class Demande implements Serializable {
 	int id;
 	@Column(name = "Dem_Type")
 	String type;
+	@Column(name = "Dem_titre")
+	String titre;
 	@Column(name = "Dem_Panne")
 	String panne;
 	@Column(name = "Dem_Etat")
 	String etat;
+	@Column(name = "Dem_picture")
+	String picture;
 	@Column(name = "Dem_Date")
 	@Temporal(TemporalType.DATE)
 	Date datedemande;
@@ -58,6 +62,23 @@ public class Demande implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 
 	public String getEtat() {
@@ -131,7 +152,7 @@ public class Demande implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	User clientD;
 
-	@OneToOne()
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Cordgeo_ID")
 	private CordgeoDemande cordgeoudemande;
 
@@ -140,7 +161,7 @@ public class Demande implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Demande [id=" + id + ", type=" + type + ", panne=" + panne + ", etat=" + etat + ", clientD="
+		return "Demande [id=" + id +", titre="+ titre+ ", type=" + type + ", panne=" + panne + ", etat=" + etat + ", image="+picture+", clientD="
 				+ clientD.id + ", cordgeoudemande=" + cordgeoudemande + ", OffreAgent=" + OffreAgent + "date="+datedemande +"]";
 	}
 

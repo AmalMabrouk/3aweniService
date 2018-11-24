@@ -46,7 +46,7 @@ public class UserService {
 	@Path("ajouterUser")
 	@Consumes("application/json")
 	public String register(User u) {
-
+		System.out.println("remote" + us.toString());
 		us.addUser(u);
 		return "ajout";
 
@@ -77,13 +77,11 @@ public class UserService {
 	@Path("UpdateUser")
 	public String updateEmployee(User u) {
 		us.updateUser(u);
-		
+
 		return "mise a jour ";
 
 	}
-	
-	
-	
+
 	@GET
 	@Path("findUserByMail/{mail}")
 	@Produces("application/json")
@@ -94,4 +92,10 @@ public class UserService {
 		}
 		return null;
 	}
+	
+	
+	
+
+	
+	
 }

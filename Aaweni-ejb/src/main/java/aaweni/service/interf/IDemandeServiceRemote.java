@@ -10,15 +10,17 @@ import aaweni.entity.Demande;
 public interface IDemandeServiceRemote {
 	
 	
-	public int addDemande(Demande demande);
+	 int addDemande(Demande demande);
 
-	public void removeDemande(int id);
+	 void removeDemande(int id);
 
-	public void updatDemande(Demande demande);
+	 void updatDemande(Demande demande);
 
-	public List<Demande> findDemandeByIdClient(int id);
+	 List<Demande> findDemandeByIdClient(int id);
 
-	Demande findDemandeById(int id);
+	 Demande findDemandeById(int id);
+	 
+	 List<Demande> findDemandeBySpecialite(String specialite);
 
 	
 }
