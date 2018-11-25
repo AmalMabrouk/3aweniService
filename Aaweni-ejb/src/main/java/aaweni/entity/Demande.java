@@ -41,7 +41,7 @@ public class Demande implements Serializable {
 	@Column(name = "Dem_picture")
 	String picture;
 	@Column(name = "Dem_Date")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	Date datedemande;
 
 	public Demande() {
