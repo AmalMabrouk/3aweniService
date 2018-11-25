@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "Demande")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+
 public class Demande implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

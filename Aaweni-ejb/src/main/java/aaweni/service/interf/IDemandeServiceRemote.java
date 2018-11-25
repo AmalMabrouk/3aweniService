@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import aaweni.entity.Demande;
+import aaweni.entity.User;
 
 @Remote
 public interface IDemandeServiceRemote {
@@ -22,5 +23,5 @@ public interface IDemandeServiceRemote {
 	 
 	 List<Demande> findDemandeBySpecialite(String specialite);
 
-	
+	 public List<Demande> findAllDemande();
 }

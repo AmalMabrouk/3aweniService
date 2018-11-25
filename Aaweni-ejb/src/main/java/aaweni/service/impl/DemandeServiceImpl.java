@@ -66,9 +66,10 @@ public class DemandeServiceImpl implements IDemandeServiceRemote {
 	public List<Demande> findDemandeByIdClient(int id) {
 
 		List<Demande> listedemande = null;
+		Query query = em.createQuery("select e from Demande e where e.clientD.id=:id");
+		query.setParameter("id", id);
 		try {
-			Query query = em.createQuery("select e from Demande e where e.clientD.id=:id");
-			query.setParameter("id", id);
+			
 
 			listedemande = query.getResultList();
 		} catch (Exception e) {
@@ -113,6 +114,19 @@ public class DemandeServiceImpl implements IDemandeServiceRemote {
 			return listedemande;
 		}
 		return null;
+	}
+
+	@Override
+	public List<Demande> findAllDemande() {
+		System.out.println("In findAllUsers : ");
+		List<Demande> users = em.createQuery("Select U from Demande U", Demande.class).getResultList();
+
+		System.out.println("Out of findAllUsers : ");
+
+		// System.out.println(users.get(1).toString());
+		// users.toArray();
+		System.out.println(users.toString());
+		return users;
 	}
 
 }

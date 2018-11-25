@@ -36,11 +36,26 @@ public class DemandeService {
 	}
 	
 	@GET
+	@Produces("application/json")
+	public List<Demande> ListeUser() {
+		System.out.println("here");
+		Demandelist = ds.findAllDemande();
+		if (Demandelist != null) {
+			return Demandelist;
+		}
+		return null;
+	}
+	
+	
+	@GET
 	@Path("demandeParSpecialite/{specialite}")
 	@Produces("application/json")
 	public List<Demande> ListeDemandeParSpecialite(@PathParam(value="specialite") String specialite) {
 		System.out.println("here");
+		
 		Demandelist = ds.findDemandeBySpecialite(specialite);
+		for(int i =0;i<Demandelist.size();i++)
+		{System.out.println(Demandelist.get(i)); }
 		if (Demandelist != null) {
 			return Demandelist;
 		}
