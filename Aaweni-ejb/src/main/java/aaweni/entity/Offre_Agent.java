@@ -14,8 +14,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Table(name = "Offre_Agent")
+
 public class Offre_Agent implements Serializable {
 
 	@Id
@@ -90,8 +95,10 @@ public class Offre_Agent implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Offre_Agent [id=" + id + ", prixpropose=" + prixpropose + ", etat=" + etat + ", agent=" + user.id
+		return "Offre_Agent [id=" + id + ", prixpropose=" + prixpropose + ", etat=" + etat + ", user=" + user.id
 				+ ", demande=" + demande.id + "]";
 	}
+
+	
 
 }
